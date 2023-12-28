@@ -15,6 +15,7 @@ function randomNumberArray(){ //Sugeneruaja random array nuo 0-19
     return randomNumberList
 }
 function questionDisplay(){
+    localStorage.clear()
     let randomNumberList = randomNumberArray()
     const buttonNext = document.createElement("button")//
     buttonNext.innerText="next"                        // del testavimo
@@ -36,6 +37,17 @@ function questionDisplay(){
             awnserDisplay.setAttribute("class","awnserDisplay")
             awnserDisplay.innerText=question1[curentQuestion].answers[i].text
             document.body.append(awnserDisplay)
+            awnserDisplay.addEventListener("click",(event)=>{
+                const questionAwnsers = JSON.parse(localStorage.getItem("questionAwnsers"))
+                const data = questionAwnsers === null ? [] : questionAwnsers
+                let awnser ={
+                    question: question1[curentQuestion].question,
+                    awnser: question1[curentQuestion].answers[i].text,
+                    isCorrect: question1[curentQuestion].answers[i].isCorrect
+                }
+                data.push(awnser)
+                localStorage.setItem("questionAwnsers",JSON.stringify(data))
+            })
         }
         randomQuestion++
     })
