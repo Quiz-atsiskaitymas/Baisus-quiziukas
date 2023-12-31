@@ -45,6 +45,17 @@ function fiftyfiftychance(){
         })
 
         document.getElementById('fiftychance').remove() // panaikina mygtuka po panaudojimo
+        answerbutton.addEventListener("click",(event)=>{
+            const questionAwnsers = JSON.parse(localStorage.getItem("questionAwnsers"))
+            const data = questionAwnsers === null ? [] : questionAwnsers
+            let awnser ={
+                question: document.getElementById("questionDisplay").innerText,
+                awnser: answerbutton.innerText,
+                isCorrect: false
+            }
+            data.push(awnser)
+            localStorage.setItem("questionAwnsers",JSON.stringify(data))
+        })
         
     })
     
