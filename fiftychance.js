@@ -1,6 +1,6 @@
 "use strict";
 import question1 from "./data.js";
-
+import { questionDisplay } from "./randomQuestion.js";
 
 function fiftyfiftychance(){
     const fiftyButton = document.createElement('button')
@@ -46,15 +46,17 @@ function fiftyfiftychance(){
 
         document.getElementById('fiftychance').remove() // panaikina mygtuka po panaudojimo
         answerbutton.addEventListener("click",(event)=>{
-            const questionAwnsers = JSON.parse(localStorage.getItem("questionAwnsers"))
-            const data = questionAwnsers === null ? [] : questionAwnsers
+            const questionAnswers = JSON.parse(localStorage.getItem("questionAnswers"))
+            const data = questionAnswers === null ? [] : questionAnswers
             let awnser ={
                 question: document.getElementById("questionDisplay").innerText,
                 awnser: answerbutton.innerText,
                 isCorrect: false
             }
             data.push(awnser)
-            localStorage.setItem("questionAwnsers",JSON.stringify(data))
+            localStorage.setItem("questionAnswers",JSON.stringify(data))
+            document.getElementById("questionDisplay").remove()
+            questionDisplay()
         })
         
     })
