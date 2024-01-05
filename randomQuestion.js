@@ -2,7 +2,6 @@
 import question1 from "./data.js";
 function randomNumberArray() {
   //Sugeneruaja random array nuo 0-19
-  localStorage.clear();
   let questionLenght = question1.length;
   let questionNumbers = [];
   let randomNumberList = [];

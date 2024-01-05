@@ -45,8 +45,8 @@ function fiftyfiftychance(){
         })
         document.getElementById('fiftychance').remove() // panaikina mygtuka po panaudojimo
         answerbutton.addEventListener("click",(event)=>{
-            const questionAwnsers = JSON.parse(localStorage.getItem("questionAnswers"))
-            const data = questionAwnsers === null ? [] : questionAwnsers
+            const questionAnswers = JSON.parse(localStorage.getItem("questionAnswers"))
+            const data = questionAnswers === null ? [] : questionAnswers
             let awnser ={
                 question: document.getElementById("questionDisplay").innerText,
                 awnser: answerbutton.innerText,
