@@ -9,8 +9,11 @@ function answervalue(){
         question1.forEach(el => {
             el.answers.forEach((ele)=>{
                 if(ele.isCorrect===true){
-                    correctAnswerArray.push(ele.text)}
-                else{wrongAnswerArray.push(ele.text)}
+                    if(isNaN(ele.text)){correctAnswerArray.push(ele.text)}// from number to string
+                    else{ele.text+="";correctAnswerArray.push(ele.text)}
+                }
+                if(isNaN(ele.text)){wrongAnswerArray.push(ele.text)}
+                else{ele.text+="";wrongAnswerArray.push(ele.text)}
             })
         })
     console.log(correctAnswerArray);
@@ -22,8 +25,8 @@ function answervalue(){
     }
     buttons.forEach(el=>{
         //testavimui geri atsakymai ir ne
-        if(correctAnswerArray.toString().includes(el.innerText)){el.style.backgroundColor="green"}
-        else if(wrongAnswerArray.toString().includes(el.innerText)){el.style.backgroundColor="red"}
+        if(correctAnswerArray.includes(el.innerText)){el.style.backgroundColor="green"}
+        else if(wrongAnswerArray.includes(el.innerText)){el.style.backgroundColor="red"}
         console.log(el.innerText);
         
         el.addEventListener("click", (event)=>{
