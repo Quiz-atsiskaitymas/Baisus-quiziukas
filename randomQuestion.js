@@ -1,5 +1,6 @@
 "use strict";
 import question1 from "./data.js";
+import { answervalue } from "./answervalue.js";
 function randomNumberArray() {
   //Sugeneruaja random array nuo 0-19
   let questionLenght = question1.length;
@@ -53,6 +54,7 @@ function questionDisplay() {
         }
       });
     }
+    answervalue()
   }
 
   displayNextQuestion();

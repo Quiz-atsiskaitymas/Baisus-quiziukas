@@ -1,6 +1,7 @@
 "use strict";
 import question1 from "./data.js";
 import { questionDisplay } from "./randomQuestion.js";
+import { answervalue } from "./answervalue.js";
 
 function fiftyfiftychance(){
     const fiftyButton = document.createElement('button')
@@ -58,7 +59,7 @@ function fiftyfiftychance(){
             document.getElementById("questionDisplay").remove()
             questionDisplay()
         })
-        
+        answervalue()
     })
     
 }
