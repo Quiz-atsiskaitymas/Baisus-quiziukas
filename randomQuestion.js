@@ -16,7 +16,7 @@ function randomNumberArray() {
   return randomNumberList;
 }
 function questionDisplay() {
-  localStorage.clear();
+  // localStorage.clear();
   let randomNumberList = randomNumberArray();
   const questionDisplay = document.createElement("h2");
   questionDisplay.setAttribute("id", "questionDisplay");
