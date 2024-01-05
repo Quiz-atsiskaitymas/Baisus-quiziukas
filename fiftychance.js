@@ -23,7 +23,6 @@ function fiftyfiftychance(){
                     if(element.isCorrect===false){
                         buttons.forEach((el)=>{
                             if(el.innerText==element.text){
-                                console.log(element.text);
                                 wrongAnswerArray.push(element.text) 
                                 el.remove()    //istrina visus neteisngus atsakymus 
                             }

@@ -16,18 +16,15 @@ function answervalue(){
                 else{ele.text+="";wrongAnswerArray.push(ele.text)}
             })
         })
-    console.log(correctAnswerArray);
-    console.log(wrongAnswerArray);
     if(document.getElementById('QuestionCounterDiv')===null){
     const QuestionCounterDiv = document.createElement('h2')
     QuestionCounterDiv.setAttribute('id', 'QuestionCounterDiv')
     document.body.append(QuestionCounterDiv)
     }
     buttons.forEach(el=>{
-        //testavimui geri atsakymai ir ne
+        //testavimui geri atsakymai ir ne!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if(correctAnswerArray.includes(el.innerText)){el.style.backgroundColor="green"}
         else if(wrongAnswerArray.includes(el.innerText)){el.style.backgroundColor="red"}
-        console.log(el.innerText);
         
         el.addEventListener("click", (event)=>{
             event.preventDefault()
