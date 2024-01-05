@@ -47,14 +47,12 @@ function fiftyfiftychance(){
         answerbutton.addEventListener("click",(event)=>{
             const questionAnswers = JSON.parse(localStorage.getItem("questionAnswers"))
             const data = questionAnswers === null ? [] : questionAnswers
-            console.log(questionAnswers);
             let awnser ={
                 question: document.getElementById("questionDisplay").innerText,
                 awnser: answerbutton.innerText,
                 isCorrect: false
             }
             data.push(awnser)
-            console.log(data);
             localStorage.setItem("questionAnswers",JSON.stringify(data))
             document.getElementById("questionDisplay").remove()
             questionDisplay()
