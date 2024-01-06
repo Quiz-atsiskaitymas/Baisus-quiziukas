@@ -1,4 +1,3 @@
-// timer.js
 import { nextQuestion } from "./script.js";
 
 let timer;
@@ -10,7 +9,7 @@ function startTimer(seconds, callback) {
 
     if (timeLeft === 0) {
       clearInterval(timer);
-      document.getElementById('timerDisplay').innerText = ''; // Clear timer display
+      document.getElementById('timerDisplay').innerText = '';
       callback();
     }
 
@@ -20,7 +19,7 @@ function startTimer(seconds, callback) {
 
 function resetTimer() {
   clearInterval(timer);
-  startTimer(30, nextQuestion); // Restart the timer with the full duration of 30 seconds
+  startTimer(30, nextQuestion);
 }
 
 export { startTimer, resetTimer };
