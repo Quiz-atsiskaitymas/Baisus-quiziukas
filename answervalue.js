@@ -19,6 +19,7 @@ function answervalue(){
     if(document.getElementById('QuestionCounterDiv')===null){
     const QuestionCounterDiv = document.createElement('h2')
     QuestionCounterDiv.setAttribute('id', 'QuestionCounterDiv')
+    QuestionCounterDiv.style.display="flex"
     document.body.append(QuestionCounterDiv)
     }
     buttons.forEach(el=>{
@@ -31,7 +32,7 @@ function answervalue(){
             
             if(correctAnswerArray.includes(el.innerText)){
                 alert('Right')
-                const elementP= document.createElement('p')
+                const elementP= document.createElement('div')
                 elementP.innerText=QuestionCounter++
                 elementP.style.color="green"
                 QuestionCounterDiv.append(elementP)
@@ -39,7 +40,7 @@ function answervalue(){
             }
             else if(wrongAnswerArray.includes(el.innerText)){
                 alert('Wrong')
-                const elementP= document.createElement('p')
+                const elementP= document.createElement('div')
                 elementP.innerText=QuestionCounter++
                 elementP.style.color="red"
                 QuestionCounterDiv.append(elementP)
