@@ -1,0 +1,51 @@
+
+* {
+    margin: 0;
+}
+
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1em;
+    background-image: url('./background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+#questiondisplay {
+    
+}
+
+#fiftychance {
+    order: 1;
+    width: 50vw;
+}
+
+.awnserDisplay {
+    min-width: 40%;
+    border-radius: 2em;
+    border: darkred solid 0.5em;
+    color: whitesmoke;
+    background-color: transparent !important;
+}
+
+#QuestionCounterDiv {
+    display: flex;
+    order: 2;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#QuestionCounterDiv * {
+    background-color: black;
+    border-radius: 50%;
+    width: 1.5em;
+    text-align: center;
+}
