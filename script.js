@@ -5,7 +5,7 @@ import { fiftyfiftychance } from "./fiftychance.js";
 import { startTimer, resetTimer } from "./timer.js";
 
 function nextQuestion() {
-  resetTimer(); // Reset the timer when moving to the next question
+  resetTimer();
   questionDisplay();
 }
 
@@ -17,7 +17,7 @@ function init() {
 
 init();
 
-// Add this code to reset the timer when an answer is selected
+
 document.addEventListener("answerSelected", function () {
   resetTimer();
 });
