@@ -1,8 +1,8 @@
 "use strict";
 import question1 from "./data.js";
 import { answervalue } from "./answervalue.js";
+
 function randomNumberArray() {
-  //Sugeneruaja random array nuo 0-19
   let questionLenght = question1.length;
   let questionNumbers = [];
   let randomNumberList = [];
@@ -16,6 +16,7 @@ function randomNumberArray() {
   }
   return randomNumberList;
 }
+
 function questionDisplay() {
   let randomNumberList = randomNumberArray();
   const questionDisplay = document.createElement("h2");
@@ -46,19 +47,36 @@ function questionDisplay() {
           "questionAnswers",
           JSON.stringify(questionAnswers)
         );
-        // Add a delay of 2 seconds before showing the next question
+
         setTimeout(() => {
           randomQuestion++;
-          if (JSON.parse(localStorage.getItem("questionAnswers")).length < randomNumberList.length) {
+          if (
+            JSON.parse(localStorage.getItem("questionAnswers")).length <
+            randomNumberList.length
+          ) {
             displayNextQuestion();
           } else {
             alert("Visi klausimai atsakyti");
+
+            const elementsToRemove = document.querySelectorAll(
+              "h2:not(#QuestionCounterDiv), button, #timerDisplay"
+            );
+            elementsToRemove.forEach((el) => el.remove());
+
+            const restartButton = document.createElement("button");
+            restartButton.innerText = "Restart Quiz";
+            restartButton.addEventListener("click", () => {
+              localStorage.clear();
+              location.reload();
+            });
+            document.body.appendChild(restartButton);
           }
         }, 1250);
       });
     }
     answervalue();
   }
+
   displayNextQuestion();
 }
 
