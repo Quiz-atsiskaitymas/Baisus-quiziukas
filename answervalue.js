@@ -54,17 +54,16 @@ function answervalue() {
     //po paskutinio klausimo
     // ending after questions
     if(document.getElementById("QuestionCounterDiv").childElementCount===20){//<-------pakeisti kiek klausimu reikia atsakyti
-      alert('no')
-        const bodyEl = document.querySelector('body')
-        const allDiv = document.querySelectorAll('body>div')
-        allDiv.forEach((el)=>(el.remove()))
-        const allh2 = document.getElementById('questionDisplay')
-        allh2.remove()
-        const allButton = document.querySelectorAll('body>button')
-        allButton.forEach((el)=>(el.remove()))
-        const congrat = document.createElement('h1')
-        congrat.innerText="congratulation"
-        bodyEl.append(congrat)
+      const bodyEl = document.querySelector('body')
+      const allDiv = document.querySelectorAll('body>div')
+      allDiv.forEach((el)=>(el.remove()))
+      const allh2 = document.getElementById('questionDisplay')
+      allh2.remove()
+      const allButton = document.querySelectorAll('body>button')
+      allButton.forEach((el)=>(el.remove()))
+      const congrat = document.createElement('h1')
+      congrat.innerText="congratulation"
+      bodyEl.append(congrat)
     }
       
 
