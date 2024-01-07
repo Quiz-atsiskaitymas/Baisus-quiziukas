@@ -46,15 +46,19 @@ function questionDisplay() {
           "questionAnswers",
           JSON.stringify(questionAnswers)
         );
-        randomQuestion++;
-        if (randomQuestion < randomNumberList.length) {
-          displayNextQuestion();
-        } else {
-          console.log("Visi klausimai atsakyti");
-        }
+
+        // Add a delay of 2 seconds before showing the next question
+        setTimeout(() => {
+          randomQuestion++;
+          if (randomQuestion < randomNumberList.length) {
+            displayNextQuestion();
+          } else {
+            console.log("Visi klausimai atsakyti");
+          }
+        }, 2000);
       });
     }
-    answervalue()
+    answervalue();
   }
   displayNextQuestion();
 }
