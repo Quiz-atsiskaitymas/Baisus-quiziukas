@@ -88,14 +88,14 @@ function answervalue() {
       if (correctAnswerArray.includes(el.innerText)) {
         el.style.backgroundColor = "green";
         const elementP = document.createElement("div");
-        elementP.innerText = QuestionCounter++;
+        elementP.innerText = document.getElementById("QuestionCounterDiv").childElementCount+1;;
         elementP.style.color = "green";
         QuestionCounterDiv.append(elementP);
         document.dispatchEvent(new Event("answerSelected"));
       } else if (wrongAnswerArray.includes(el.innerText)) {
         el.style.backgroundColor = "red";
         const elementP = document.createElement("div");
-        elementP.innerText = QuestionCounter++;
+        elementP.innerText = document.getElementById("QuestionCounterDiv").childElementCount+1;;
         elementP.style.color = "red";
         QuestionCounterDiv.append(elementP);
         document.dispatchEvent(new Event("answerSelected"));
