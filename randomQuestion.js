@@ -46,16 +46,15 @@ function questionDisplay() {
           "questionAnswers",
           JSON.stringify(questionAnswers)
         );
-
         // Add a delay of 2 seconds before showing the next question
         setTimeout(() => {
           randomQuestion++;
-          if (randomQuestion < randomNumberList.length) {
+          if (JSON.parse(localStorage.getItem("questionAnswers")).length < randomNumberList.length) {
             displayNextQuestion();
           } else {
-            console.log("Visi klausimai atsakyti");
+            alert("Visi klausimai atsakyti");
           }
-        }, 2000);
+        }, 1250);
       });
     }
     answervalue();
