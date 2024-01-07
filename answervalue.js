@@ -1,5 +1,7 @@
 "use strict";
 import question1 from "./data.js";
+import { startTimer, resetTimer } from "./timer.js";
+
 // import { nextQuestion } from "./script.js";
 let QuestionCounter = 1;
 function answervalue() {
@@ -22,6 +24,7 @@ function answervalue() {
           } else {
             wrongAnswerArray.push(answer.text.toString());
           }
+          resetTimer();
         });
       });
       if (correctAnswerArray.includes(el.innerText)) {
