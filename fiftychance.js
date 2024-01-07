@@ -79,7 +79,7 @@ function fiftyfiftychance() {
         setTimeout(() => {
           document.getElementById("questionDisplay").remove();
           questionDisplay();
-        }, 2000);
+        }, 1250);
       });
     });
     answervalue();
