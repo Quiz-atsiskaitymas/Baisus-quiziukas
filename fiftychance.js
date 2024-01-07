@@ -70,8 +70,8 @@ function fiftyfiftychance() {
         const data = questionAnswers === null ? [] : questionAnswers;
         let awnser = {
           question: document.getElementById("questionDisplay").innerText,
-          awnser: answerbutton.innerText,
-          isCorrect: false,
+          awnser: el.innerText,
+          isCorrect: el.id == "answer1" ? true : false
         };
         data.push(awnser);
         localStorage.setItem("questionAnswers", JSON.stringify(data));
