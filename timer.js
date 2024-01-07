@@ -8,6 +8,7 @@ function startTimer(seconds, callback) {
     document.getElementById('timerDisplay').innerText = `Time left: ${timeLeft}s`;
 
     if (timeLeft === 0) {
+      document.getElementById("questionDisplay").remove()
       clearInterval(timer);
       document.getElementById('timerDisplay').innerText = '';
       callback();
