@@ -8,7 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-<<<<<<< Updated upstream
+
 }
 
 button#fiftychance {
@@ -21,17 +21,17 @@ button#fiftychance {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-  }
+}
 
-  h2 {
+h2 {
     background-color: rgb(171, 167, 167);
     color: white;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-  }
+}
 
-  button.awnserDisplay {
+button.awnserDisplay {
     background-color: #008CBA;
     color: white;
     padding: 10px 20px;
@@ -41,12 +41,28 @@ button#fiftychance {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-  }
+    order: 2;
+}
 
+#questionDisplay{
+    order: 0;
+}
 
+#QuestionCounterDiv{
+    order: 1;
+}
 
-=======
-  }
-  
-  
->>>>>>> Stashed changes
+#QuestionCounterDiv>div{
+    margin: 1vw;
+    background-color: gray;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    border: solid black 1px;
+}
+
+#fiftychance{
+    order: 3;
+}
