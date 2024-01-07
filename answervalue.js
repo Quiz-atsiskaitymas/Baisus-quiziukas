@@ -23,9 +23,9 @@ function answervalue() {
       question1.forEach((question) => {
         question.answers.forEach((answer) => {
           if (answer.isCorrect) {
-            correctAnswerArray.push(answer.text);
+            correctAnswerArray.push(answer.text.toString());
           } else {
-            wrongAnswerArray.push(answer.text);
+            wrongAnswerArray.push(answer.text.toString());
           }
         });
       });
