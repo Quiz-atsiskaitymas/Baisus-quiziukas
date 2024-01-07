@@ -1,6 +1,7 @@
 "use strict";
 import question1 from "./data.js";
 import { answervalue } from "./answervalue.js";
+import { displayResults } from "./script.js";
 
 function randomNumberArray() {
   let questionLenght = question1.length;
@@ -70,6 +71,14 @@ function questionDisplay() {
               location.reload();
             });
             document.body.appendChild(restartButton);
+
+            displayResults();
+            if (percentage >= 70) {
+              resultDisplay.innerHTML += "<p>Passed</p>";
+            } else {
+              resultDisplay.innerHTML += "<p>Failed</p>";
+            }
+            ///////////////////////////////////
           }
         }, 1250);
       });
@@ -79,5 +88,18 @@ function questionDisplay() {
 
   displayNextQuestion();
 }
+
+document.addEventListener("answerSelected", function () {
+  resetTimer();
+
+  const randomNumberList =
+    JSON.parse(localStorage.getItem("randomNumberList")) || [];
+  const questionAnswers =
+    JSON.parse(localStorage.getItem("questionAnswers")) || [];
+
+  if (questionAnswers.length >= randomNumberList.length) {
+    displayResults();
+  }
+});
 
 export { questionDisplay };
