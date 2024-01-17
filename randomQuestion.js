@@ -80,7 +80,7 @@ function questionDisplay() {
             }
             ///////////////////////////////////
           }
-        }, 1250);
+        }, 1);
       });
     }
     answervalue();
