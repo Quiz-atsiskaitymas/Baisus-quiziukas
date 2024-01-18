@@ -1,8 +1,9 @@
 "use strict";
 import question1 from "./data.js";
 import { answervalue } from "./answervalue.js";
+import { displayResults } from "./script.js";
+
 function randomNumberArray() {
-  //Sugeneruaja random array nuo 0-19
   let questionLenght = question1.length;
   let questionNumbers = [];
   let randomNumberList = [];
@@ -16,6 +17,7 @@ function randomNumberArray() {
   }
   return randomNumberList;
 }
+
 function questionDisplay() {
   let randomNumberList = randomNumberArray();
   const questionDisplay = document.createElement("h2");
@@ -46,18 +48,58 @@ function questionDisplay() {
           "questionAnswers",
           JSON.stringify(questionAnswers)
         );
-        randomQuestion++;
-        if (randomQuestion < randomNumberList.length) {
-          displayNextQuestion();
-        } else {
-          console.log("Visi klausimai atsakyti");
-        }
+
+        setTimeout(() => {
+          randomQuestion++;
+          if (
+            JSON.parse(localStorage.getItem("questionAnswers")).length <
+            randomNumberList.length
+          ) {
+            displayNextQuestion();
+          } else {
+            alert("Visi klausimai atsakyti");
+
+            const elementsToRemove = document.querySelectorAll(
+              "h2:not(#QuestionCounterDiv), button, #timerDisplay"
+            );
+            elementsToRemove.forEach((el) => el.remove());
+
+            const restartButton = document.createElement("button");
+            restartButton.innerText = "Restart Quiz";
+            restartButton.addEventListener("click", () => {
+              localStorage.clear();
+              location.reload();
+            });
+            document.body.appendChild(restartButton);
+
+            displayResults();
+            if (percentage >= 70) {
+              resultDisplay.innerHTML += "<p>Passed</p>";
+            } else {
+              resultDisplay.innerHTML += "<p>Failed</p>";
+            }
+            ///////////////////////////////////
+          }
+        }, 1);
       });
     }
-    answervalue()
+    answervalue();
   }
 
   displayNextQuestion();
 }
+
+document.addEventListener("answerSelected", function () {
+  resetTimer();
+
+  const randomNumberList =
+    JSON.parse(localStorage.getItem("randomNumberList")) || [];
+  const questionAnswers =
+    JSON.parse(localStorage.getItem("questionAnswers")) || [];
+
+  if (questionAnswers.length >= randomNumberList.length) {
+    displayResults();
+  }
+});
 
 export { questionDisplay };

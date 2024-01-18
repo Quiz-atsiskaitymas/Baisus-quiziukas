@@ -1,51 +1,67 @@
-
-* {
-    margin: 0;
-}
-
-
 body {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    gap: 1em;
-    background-image: url('./background.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    justify-content: center;
-    align-items: center;
+  font-family: "Arial", sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-#questiondisplay {
-    
+button#fiftychance {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-#fiftychance {
-    order: 1;
-    width: 50vw;
+h2 {
+  background-color: rgb(171, 167, 167);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-.awnserDisplay {
-    min-width: 40%;
-    border-radius: 2em;
-    border: darkred solid 0.5em;
-    color: whitesmoke;
-    background-color: transparent !important;
+button.awnserDisplay {
+  background-color: #008cba;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  order: 2;
+}
+
+#questionDisplay {
+  order: 0;
 }
 
 #QuestionCounterDiv {
-    display: flex;
-    order: 2;
-    gap: 0.5em;
-    flex-wrap: wrap;
-    justify-content: center;
+  order: 1;
 }
 
-#QuestionCounterDiv * {
-    background-color: black;
-    border-radius: 50%;
-    width: 1.5em;
-    text-align: center;
+#QuestionCounterDiv > div {
+  margin: 1vw;
+  background-color: gray;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  border: solid black 1px;
+}
+
+#fiftychance {
+  order: 3;
 }
